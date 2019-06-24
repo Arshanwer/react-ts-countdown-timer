@@ -1,10 +1,10 @@
 {
-  "name": "react-timer",
-  "version": "1.0.0",
+  "name": "@arshanwer/react-countdown-timer",
+  "version": "0.5.0",
   "description": "react count down component",
   "author": "Arshanwer",
   "license": "MIT",
-  "repository": "https://github.com/Arshanwer/react-timer",
+  "repository": "https://github.com/Arshanwer/react-ts-countdown-timer",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

@@ -1,6 +1,3 @@
-/**
- * @class ExampleComponent
- */
 
 import * as React from 'react'
 import './styles.css';
@@ -22,7 +19,7 @@ interface TimerState {
   resendTriesCount: number;
 }
 
-export default class ReactTimer extends React.Component<TimerProps, TimerState> {
+export class ReactCountDownTimer extends React.Component<TimerProps, TimerState> {
   interval: any;
   seconds: number = 59;
   counter: number = 3;

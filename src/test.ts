@@ -1,7 +1,7 @@
-import ReactTimer from './'
+import { ReactCountDownTimer } from ".";
 
-describe('ExampleComponent', () => {
+describe('ReactCountDownTimer', () => {
   it('is truthy', () => {
-    expect(ReactTimer).toBeTruthy()
+    expect(ReactCountDownTimer).toBeTruthy()
   })
 })

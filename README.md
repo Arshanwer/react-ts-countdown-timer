@@ -7,28 +7,25 @@
 ## Install
 
 ```bash
-npm install --save react-timer
+npm install --save @arshanwer/react-countdown-timer
 ```
 
 ## Usage
 
 ```tsx
 import * as React from 'react'
-
-import ReactTimer from 'react-timer';
+import {ReactCountDownTimer} from '@arshanwer/react-countdown-timer';
 
 class Example extends React.Component {
   render () {
     return (
-      <div>
-        <ReactTimer
-          startTimer={true}
-          countDown={1}
-          resend={true}
-          limitResendTries={true}
-          resendTriesCount={2}
-          resendOtp={() => { }} />
-      </div>
+      <ReactCountDownTimer
+        startTimer={true}
+        countDown={1}
+        reset={true}
+        limitResetTries={true}
+        TriesCount={2}
+        resetTimerEvent={() => { }} />
     )
   }
 }
@@ -36,12 +33,12 @@ class Example extends React.Component {
 
 | Attributes                        | Types    | Default   | Required | Description                     |
 |-----------------------------------|----------|-----------|----------|---------------------------------|
-| startTimer                        | boolean  |     -     |    Yes   | Start counter                   |
-| countDown                         | number   |     -     |    Yes   | time in minutes                 |
-| reset                             | boolean  | undefined |    No    | Enable resend functionality     |
-| limitResetTries                   | boolean  | undefined |    No    | Limit the amount of reset timer |
-| TriesCount                        | number   | undefined |    No    | number of tries to reset timer  |
-| resetTimerEvent(...args : any []) | function | undefined |    No    | Fire custom event on reset      |
+| startTimer                        | boolean  | -         | Yes      | Start counter                   |
+| countDown                         | number   | -         | Yes      | time in minutes                 |
+| reset                             | boolean  | undefined | No       | Enable resend functionality     |
+| limitResetTries                   | boolean  | undefined | No       | Limit the amount of reset timer |
+| TriesCount                        | number   | undefined | No       | number of tries to reset timer  |
+| resetTimerEvent(...args : any []) | function | undefined | No       | Fire custom event on reset      |
 
 ## License
 
