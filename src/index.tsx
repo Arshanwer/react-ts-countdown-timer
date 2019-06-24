@@ -102,7 +102,7 @@ export class ReactCountDownTimer extends React.Component<TimerProps, TimerState>
     return (
       <>
         <div className="r-timer-container">
-          <div className="timer">{`0${this.state.minutes} : ${this.state.seconds <= 9 ? "0" + this.state.seconds : this.state.seconds}`}</div>
+          <div className="timer">{`${this.state.minutes <= 9 ? "0" + this.state.minutes : this.state.minutes} : ${this.state.seconds <= 9 ? "0" + this.state.seconds : this.state.seconds}`}</div>
         </div>
         <div className="restart-timer-container">
           {
