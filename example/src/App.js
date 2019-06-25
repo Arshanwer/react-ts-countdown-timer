@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {ReactCountDownTimer} from './dist/index';
+import { ReactCountDownTimer } from './dist/index';
 
 export default class App extends Component {
   constructor(props) {
