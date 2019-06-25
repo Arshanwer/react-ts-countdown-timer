@@ -10,6 +10,7 @@
 npm install --save @arshanwer/react-countdown-timer
 ```
 
+[Live DEMO](https://arshanwer.github.io/react-ts-countdown-timer/)
 ## Usage
 
 ```tsx
@@ -22,6 +23,7 @@ class Example extends React.Component {
       <ReactCountDownTimer
         startTimer={true}
         countDown={1}
+        resetBtnText={'RESTART'}
         reset={true}
         limitResetTries={true}
         TriesCount={2}
@@ -36,6 +38,7 @@ class Example extends React.Component {
 | startTimer                        | boolean  | -         | Yes      | Start counter                   |
 | countDown                         | number   | -         | Yes      | time in minutes                 |
 | reset                             | boolean  | undefined | No       | Enable resend functionality     |
+| resetBtnText                      | string   | undefined | No       | Set reset button text           |
 | limitResetTries                   | boolean  | undefined | No       | Limit the amount of reset timer |
 | TriesCount                        | number   | undefined | No       | number of tries to reset timer  |
 | resetTimerEvent(...args : any []) | function | undefined | No       | Fire custom event on reset      |

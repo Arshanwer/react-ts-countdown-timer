@@ -15,6 +15,7 @@ export default class App extends Component {
         <ReactCountDownTimer
           startTimer={true}
           countDown={1}
+          resetBtnText={'RESTART'}
           resend={true}
           limitResendTries={true}
           resendTriesCount={2}
