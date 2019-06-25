@@ -1,9 +1,35 @@
 /* add css styles here (optional) */
 
+.r-countdown-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .r-timer-container {
-    display: inline-block;
-    margin: 2em auto;
-    border: 2px solid #000;
-    font-size: 2em;
-    background: blue;
+    font-size: 1.25rem;
+}
+
+.restart-timer-btn {
+    cursor: pointer;
+    border: none;
+    min-height: 30px;
+    font-size: 1rem;
+    background: #cad9ec;
+}
+
+.restart-timer-btn:active {
+    background: #b2cff4;
+}
+
+.restart-timer-btn:focus {
+    outline: 0;
+}
+
+.restart-timer-btn:active {
+    background: #558cd1;
+    border: none;
+    border-radius: 0 !important;
+    box-shadow: none;
+    text-decoration: none;
 }

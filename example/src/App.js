@@ -14,7 +14,7 @@ export default class App extends Component {
       <div>
         <ReactCountDownTimer
           startTimer={true}
-          countDown={20}
+          countDown={1}
           resend={true}
           limitResendTries={true}
           resendTriesCount={2}

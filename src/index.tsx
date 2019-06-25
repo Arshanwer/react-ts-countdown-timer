@@ -1,6 +1,6 @@
 
 import * as React from 'react'
-import './styles.css';
+import styles from './styles.css';
 
 export interface TimerProps {
   startTimer: boolean;
@@ -8,6 +8,7 @@ export interface TimerProps {
   reset?: boolean;
   TriesCount?: number;
   limitResetTries?: boolean;
+  resetBtnText?: any;
   resetTimerEvent?: (...args: any[]) => void;
 }
 
@@ -100,22 +101,22 @@ export class ReactCountDownTimer extends React.Component<TimerProps, TimerState>
   render() {
 
     return (
-      <>
-        <div className="r-timer-container">
+      <div className={styles['r-countdown-wrapper']}>
+        <div className={styles['r-timer-container']}>
           <div className="timer">{`${this.state.minutes <= 9 ? "0" + this.state.minutes : this.state.minutes} : ${this.state.seconds <= 9 ? "0" + this.state.seconds : this.state.seconds}`}</div>
         </div>
         <div className="restart-timer-container">
           {
             this.state.resend &&
-            <div
-              className="restart-timer-btn"
+            <button
+              className={styles['restart-timer-btn']}
               onClick={() => this.resetTimerEvent()}
-            >resend
-            </div>
+            >{this.props.resetBtnText ? this.props.resetBtnText : 'RESEND'}
+            </button>
           }
 
         </div>
-      </>
+      </div>
     )
   }
 }
