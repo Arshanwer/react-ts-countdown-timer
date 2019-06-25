@@ -9,7 +9,7 @@ export interface TimerProps {
   TriesCount?: number;
   limitResetTries?: boolean;
   resetBtnText?: any;
-  resetTimerEvent?: (...args: any[]) => void;
+  resetTimerCallback?: (...args: any[]) => void;
 }
 
 interface TimerState {
@@ -48,7 +48,6 @@ export class ReactCountDownTimer extends React.Component<TimerProps, TimerState>
       this.setState((prevState) => {
         let seconds: number;
         let minutes: number = prevState.minutes;
-
         if (prevState.seconds === 0) {
           seconds = this.seconds;
           minutes = prevState.minutes > 0 ? prevState.minutes - 1 : prevState.minutes;
@@ -69,28 +68,29 @@ export class ReactCountDownTimer extends React.Component<TimerProps, TimerState>
           } else
             this.setState({ resend: true });
         } else {
-          this.setState({ resend: true });
+          this.setState({ resend: false });
         }
-
         clearInterval(this.interval);
       }
     }, 1000);
   }
 
   private resetTimerEvent() {
-    if (this.props.limitResetTries)
+    if (this.props.limitResetTries && this.props.limitResetTries === true) {
       this.setState(prevState => {
         let tries = prevState.resendTriesCount > 0 ? prevState.resendTriesCount - 1 : 0;
+
         return {
           resend: false,
           minutes: this.props.countDown === 1 ? 0 : this.props.countDown - 1,
           seconds: this.seconds, resendTriesCount: tries
         }
       });
-    else
-      this.setState({ resend: false, minutes: this.props.countDown, seconds: this.seconds });
+    } else {
+      this.setState({ resend: false, minutes: this.props.countDown === 1 ? 0 : this.props.countDown - 1, seconds: this.seconds });
+    }
 
-    this.props.resetTimerEvent && this.props.resetTimerEvent();
+    this.props.resetTimerCallback && this.props.resetTimerCallback();
     this.countDown();
   }
 

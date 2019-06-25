@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ReactCountDownTimer } from './dist/index';
+import { ReactCountDownTimer } from '@arshanwer/react-countdown-timer';
 
 export default class App extends Component {
   constructor(props) {
@@ -16,10 +16,11 @@ export default class App extends Component {
           startTimer={true}
           countDown={1}
           resetBtnText={'RESTART'}
-          resend={true}
-          limitResendTries={true}
-          resendTriesCount={2}
-          resendOtp={() => { }} />
+          reset={true}
+          TriesCount={2}
+          limitResetTries={false}
+          resetTimerCallback={() => { }} 
+          />
       </div>
     )
   }

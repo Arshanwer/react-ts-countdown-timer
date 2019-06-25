@@ -27,7 +27,7 @@ class Example extends React.Component {
         reset={true}
         limitResetTries={true}
         TriesCount={2}
-        resetTimerEvent={() => { }} />
+        resetTimerCallback={() => { }} />
     )
   }
 }
@@ -41,7 +41,7 @@ class Example extends React.Component {
 | resetBtnText                      | string   | undefined | No       | Set reset button text           |
 | limitResetTries                   | boolean  | undefined | No       | Limit the amount of reset timer |
 | TriesCount                        | number   | undefined | No       | number of tries to reset timer  |
-| resetTimerEvent(...args : any []) | function | undefined | No       | Fire custom event on reset      |
+| resetTimerCallback(...args : any []) | function | undefined | No       | Fire custom event on reset      |
 
 ## License
 
